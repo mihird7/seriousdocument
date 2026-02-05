@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: url('background.jpg') no-repeat center center/cover;
       color: #fff;
       display: flex;
       align-items: center;
@@ -18,23 +18,32 @@
       overflow: hidden;
     }
 
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
     .card {
       background: rgba(255, 255, 255, 0.15);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 420px;
       position: relative;
       z-index: 2;
+      backdrop-filter: blur(6px);
     }
 
     .slideshow {
-      width: 150px;
-      height: 150px;
+      width: 220px;
+      height: 220px;
       margin: 0 auto 20px auto;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #fff;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     }
 
     .slideshow img {
@@ -71,20 +80,23 @@
 
     .heart {
       position: absolute;
-      font-size: 20px;
+      font-size: 22px;
       animation: float 6s linear infinite;
       opacity: 0.8;
+      z-index: 0;
     }
 
     @keyframes float {
       0% { transform: translateY(100vh) scale(1); opacity: 0; }
       20% { opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+      100% { transform: translateY(-10vh) scale(1.6); opacity: 0; }
     }
 
   </style>
 </head>
 <body>
+
+  <div class="overlay"></div>
 
   <div class="card">
 
